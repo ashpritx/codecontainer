@@ -110,12 +110,12 @@ public class practical10 {
 				if(distMiles <= 1 ) {
 					System.out.println("Your delivery is free");
 				}
-				else if (distMiles>1 && distMiles<3) {
+				else if (distMiles>1 && distMiles<=3) {
 					System.out.println("Your delivery will cost £3.00");
 					total = total + 3;
 					delivFee = delivFee + 3;
 				}
-				else if (distMiles>3 && distMiles<6) {
+				else if (distMiles>3 && distMiles<=6) {
 					System.out.println("Your delivery will cost £6.00");
 					total = total + 6;
 					delivFee = delivFee + 6;
@@ -124,13 +124,11 @@ public class practical10 {
 					System.out.println("You are out of our delivery range. Unfortunately we cannot deliver to you.");
 					System.exit(0);
 				}
-				else {
-					System.out.println("Invalid input. Terminating.");
-					System.exit(0);
-				}
+
 				complete = true;
 			}
 			else if(sc.nextLine().equalsIgnoreCase("no")){
+				
 				break;
 			}
 			else {
@@ -139,7 +137,7 @@ public class practical10 {
 			
 		}//end of while loop
 		System.out.println("================================");
-		System.out.printf("Your total:");
+		System.out.printf("Your total:\n");
 		System.out.println("Your order costs £"+total);
 		System.out.println("Your delivery costs: £"+delivFee);
 		System.out.println("You ordered: ");
