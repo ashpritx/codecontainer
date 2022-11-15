@@ -1,0 +1,38 @@
+public class pr12 {
+
+	public static void main(String[] args) {
+		int age = 22;
+		int salary = 26000;
+		int current = 0;
+		int mortgage = 432000;
+		int savings = 0;
+
+		
+		for(int i = 0; i <43; i++) {
+			salary=salary+(300);
+			current = current + salary;
+			
+			for(int j = 0; j<12;j++) {
+				
+				if(mortgage>0) {
+					mortgage = mortgage - (900);
+					current = current - (900);
+				}
+				
+				
+				current = current - (750);
+				
+			}
+			if(i!=42) {
+				savings = savings + current;
+				current = 0;
+			}
+
+
+		}
+		System.out.println("Bobs financial position at 65: "
+				+ "\n salary: " +salary+"\n savings: "+savings +"\n current mortgage left to pay: "+mortgage);
+
+	}
+
+}
