@@ -1,0 +1,65 @@
+
+public class Application {
+
+	public static void main(String[] args) {
+		
+		//John------------------------------------------
+		
+		LoanAccount johnLoan = new LoanAccount(22000);
+		CurrentAccount johnCurrent = new CurrentAccount();
+		double johnSalary;
+		int j = 0;
+		//every month
+		while(johnLoan.getBalance() > 0) {
+			johnSalary = 2600;
+
+			
+			johnSalary -=(1300); // monthly outgoings
+			
+			johnSalary = johnLoan.makePayment(johnSalary, 500); // monthly 500 payment
+
+			johnCurrent.makeDeposit(johnSalary,johnSalary); // deposits remaining money into the currentAccount
+
+			johnSalary-=johnSalary;
+			
+			johnLoan.addInterest();
+			johnCurrent.addInterest();
+
+			
+			j++;
+		}
+		// does calculation
+
+		//every month
+		System.out.println("John repaid his loan after "+j+" months. His current account balance at that time was £"+(johnCurrent.getBalance()-(johnLoan.getBalance())));
+		// John-----------------------------------------
+
+		//Mary------------------------------------------
+
+
+		LoanAccount maryLoan = new LoanAccount(18000);
+		SavingsAccount marySavings = new SavingsAccount();
+		double marySalary;
+		int i = 0;
+		
+		while(maryLoan.getBalance()>0) {
+			marySalary = 2800;
+			marySalary -= (1400);
+			
+			marySalary = maryLoan.makePayment(marySalary, 350);
+			
+			marySavings.makeDeposit(marySalary, marySalary);
+			
+			marySalary -= marySalary;
+			i++;
+			
+			maryLoan.addInterest();
+			marySavings.addInterest();
+		}
+		
+		//everyMonth
+		System.out.println("Mary repaid her loan after "+i+" months. Her savings account balance at that time was £"+(marySavings.getBalance()-(maryLoan.getBalance())));
+		//Mary;
+	}
+
+}
